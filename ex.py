@@ -120,3 +120,4 @@ maxHeap.insert(9)
 maxHeap.Print()
 	
 print("The Max val is " + str(maxHeap.extractMax()))
+print("The Max val is " + str(maxHeap.extractMax()))
