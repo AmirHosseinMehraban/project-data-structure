@@ -106,18 +106,20 @@ class MaxHeap:
 	
 print('The maxHeap is ')
 	
-maxHeap = MaxHeap(15)
-maxHeap.insert(5)
-maxHeap.insert(3)
-maxHeap.insert(17)
-maxHeap.insert(10)
-maxHeap.insert(84)
-maxHeap.insert(19)
-maxHeap.insert(6)
-maxHeap.insert(22)
-maxHeap.insert(9)
 
-maxHeap.Print()
+maxHeap = MaxHeap(15)
+maxHeap.insert(2)
+maxHeap.insert(3)
+maxHeap.insert(45)
+maxHeap.insert(9)
+maxHeap.insert(4)
+maxHeap.insert(8)
+
 	
 print("The Max val is " + str(maxHeap.extractMax()))
 print("The Max val is " + str(maxHeap.extractMax()))
+print("The Max val is " + str(maxHeap.extractMax()))
+print("The Max val is " + str(maxHeap.extractMax()))
+print("The Max val is " + str(maxHeap.extractMax()))
+print("The Max val is " + str(maxHeap.extractMax()))
+
