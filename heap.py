@@ -92,8 +92,30 @@ class MaxHeap:
         while x!=0:
             buble_array.append(self.Heap[x])
             x=self.parent(x) 
-        return buble_array     
+        return buble_array
+    def bubble_down(self, index: int) -> None:
+        bubble_array=[]
+        x=self.Heap.index(index)
+        x=self.rightChild(x)
+        while x<=self.size():
+            bubble_array.append(self.Heap[x-1])
+            bubble_array.append(self.Heap[x-1])
+        return
+    
+    def merge(self, h1,h2):
+        
+        for i in h1:
+            self.insert(i)
+        for i in h2:
+            self.insert(i)
+        
+
+        print(self.Heap[1:])
+        
+     
 maxHeap = MaxHeap()
+maxHeap.merge([25,7,9,1,6,5],[9,4,3,90])
+
 maxHeap.insert(1)
 maxHeap.insert(9)
 maxHeap.insert(5)
@@ -102,7 +124,7 @@ maxHeap.insert(6)
 maxHeap.insert(25)
 print(maxHeap.bubble_up(1))
 
-	
+
 print("The Max val is " + str(maxHeap.extractMax()))
 print("The Max val is " + str(maxHeap.extractMax()))
 print("The Max val is " + str(maxHeap.extractMax()))
