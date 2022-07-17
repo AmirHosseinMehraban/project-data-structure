@@ -91,7 +91,16 @@ class Trie:
 		pCrawl,level=queue.pop()
 		index=self._charToIndex(key[level])
 		pCrawl.children[index]=None
-          
+
+	def load(self):
+		fp = open("amir.txt",'r')
+		lines=fp.readlines()
+		for i in range(len(lines)):
+			x=lines[i]   
+			y=x.find("\n")
+			x=x[0:y]
+			self.insert(x)
+		fp.close()   
 
 	# Input keys (use only 'a' through 'z' and lower case)
 keys = ["the","a","there","anaswe","any",
@@ -106,4 +115,7 @@ t = Trie()
 for key in keys:
 	t.insert(key)
 	# Search for different keys
+print(t.search("salam"))
+t.load()
+print(t.search("salam"))
 
