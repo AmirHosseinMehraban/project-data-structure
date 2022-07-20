@@ -52,7 +52,7 @@ class MaxHeap:
             print("PARENT : " + str(self.Heap[i]) +"LEFT CHILD : " + str(self.Heap[2 * i]) +"RIGHT CHILD : " + str(self.Heap[2 * i + 1]))
 
 
-    def extractMax(self):
+    def extract_max(self):
         if self.heap_size<0:
             return
         if len(self.Heap)==1:
@@ -114,7 +114,7 @@ class MaxHeap:
         
      
 maxHeap = MaxHeap()
-maxHeap.merge([25,7,9,1,6,5],[9,4,3,90])
+#maxHeap.merge([25,7,9,1,6,5],[9,4,3,90])
 
 maxHeap.insert(1)
 maxHeap.insert(9)
@@ -122,16 +122,14 @@ maxHeap.insert(5)
 maxHeap.insert(7)
 maxHeap.insert(6)
 maxHeap.insert(25)
-print(maxHeap.bubble_up(1))
+#print(maxHeap.bubble_up(1))
 
 
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+print(maxHeap.extract_max())
+
