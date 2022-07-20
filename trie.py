@@ -61,6 +61,8 @@ parser.add_argument("-find", "--find", type = str, nargs = 1,
 parser.add_argument("-delete", "--delete", type = str, nargs = 1,
 					metavar = "string", default = None,
 					help = "delete your string in trie.")
+parser.add_argument("-load", "--load", nargs = "*",
+					help = "load from path .")
 
 
 
@@ -73,9 +75,13 @@ elif args.add !=None:
 	if not x:
 		print('baddddd')
 	else:
+		keys.append(args.add[0])
 		print('ok')
 elif args.delete !=None:
 	t.delete(args.delete[0])
+elif args.load !=None:
+	t.load()
+	print("** ** ** ** ** ")
 
 
 

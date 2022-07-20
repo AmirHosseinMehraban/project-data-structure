@@ -1,4 +1,7 @@
 
+from operator import truediv
+
+
 class TrieNode:
 	
 	def __init__(self):
@@ -45,7 +48,6 @@ class Trie:
 		pCrawl.isEndOfWord = True
 
 		return True
-
 	def search(self, key):
 		pCrawl = self.root
 		length = len(key)
@@ -101,12 +103,11 @@ class Trie:
 			x=x[0:y]
 			self.insert(x)
 		fp.close()   
-
 	# Input keys (use only 'a' through 'z' and lower case)
+	def am(self):
+		return self.root.children
 keys = ["the","a","there","anaswe","any",
 		"by","their"]
-output = ["Not present in trie",
-			"Present in trie"]
 
 	# Trie object
 t = Trie()
@@ -115,7 +116,3 @@ t = Trie()
 for key in keys:
 	t.insert(key)
 	# Search for different keys
-print(t.search("salam"))
-t.load()
-print(t.search("salam"))
-
