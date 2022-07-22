@@ -2,26 +2,22 @@
 from operator import truediv
 
 
-class TrieNode:
+class Node:
 	
 	def __init__(self):
 		self.children = [None]*26
-
-		# isEndOfWord is True if node represent the end of the word
 		self.isEndOfWord = False
 
 class Trie:
 	
-	# Trie data structure class
 	def __init__(self):
 		self.root = self.getNode()
 
 	def getNode(self):
 	
-		# Returns new trie node (initialized to NULLs)
-		return TrieNode()
+		return Node()
 
-	def _charToIndex(self,ch):
+	def chartoindex(self,ch):
 		
 		# private helper function
 		# Converts key current character into index
@@ -37,14 +33,12 @@ class Trie:
 		for level in range(length):
 			if key[level] in bad:
 				return False
-			index = self._charToIndex(key[level])
+			index = self.chartoindex(key[level])
 
-			# if current character is not present
 			if not pCrawl.children[index]:
 				pCrawl.children[index] = self.getNode()
 			pCrawl = pCrawl.children[index]
 		
-		# mark last node as leaf
 		pCrawl.isEndOfWord = True
 
 		return True
@@ -52,7 +46,7 @@ class Trie:
 		pCrawl = self.root
 		length = len(key)
 		for level in range(length):
-			index = self._charToIndex(key[level])
+			index = self.chartoindex(key[level])
 			if not pCrawl.children[index]:
 				return False
 			pCrawl = pCrawl.children[index]
@@ -64,7 +58,7 @@ class Trie:
 		prev=self.root
 		length=len(key)
 		for level in range(length):
-			index=self._charToIndex(key[level])
+			index=self.chartoindex(key[level])
 			if not pCrawl.children[index]:
 				return
 			if pCrawl.isEndOfWord:
@@ -87,11 +81,11 @@ class Trie:
 			return
         ##If not a prefix but a tree longer than others, delete until isEndOfWord == True again/reach root(a unique trie)
 		if len(queue)==0:
-			index=self._charToIndex(key[0])
+			index=self.chartoindex(key[0])
 			self.root.children[index]=None
 			return
 		pCrawl,level=queue.pop()
-		index=self._charToIndex(key[level])
+		index=self.chartoindex(key[level])
 		pCrawl.children[index]=None
 
 	def load(self):
@@ -103,19 +97,16 @@ class Trie:
 			x=x[0:y]
 			self.insert(x)
 		fp.close()   
-	# Input keys (use only 'a' through 'z' and lower case)
 	def am(self):
 		return self.root.children
-keys = ["the","a","there","anaswe","any",
-		"by","their"]
 
-	# Trie object
+          
+elements= ["amir","real","esteghlal","est","rma","shahed","mofid","computer","mehraban"]
+
 t = Trie()
 
-	# Construct trie
-for key in keys:
+for key in elements:
 	t.insert(key)
-	# Search for different keys
-
 t.insert("dj")
 t.load()
+
