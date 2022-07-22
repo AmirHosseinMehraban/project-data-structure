@@ -116,3 +116,6 @@ t = Trie()
 for key in keys:
 	t.insert(key)
 	# Search for different keys
+
+t.insert("dj")
+t.load()
