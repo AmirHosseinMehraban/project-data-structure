@@ -116,10 +116,10 @@ maxHeap.insert(4)
 maxHeap.insert(8)
 
 	
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
-print("The Max val is " + str(maxHeap.extractMax()))
+print(maxHeap.extractMax())
+print(maxHeap.extractMax())
+print(maxHeap.extractMax())
+print(maxHeap.extractMax())
+print(maxHeap.extractMax())
+print(maxHeap.extractMax())
 
